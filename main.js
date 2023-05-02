@@ -55,4 +55,4 @@ function descriptografar(texto){
 
 let texto = "giovana";
 document.write(criptografar(texto));
-document.write("<br>" + descriptografar(criptografar(texto)))
+document.write("<br>" + descriptografar(criptografar(texto)));

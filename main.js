@@ -50,16 +50,16 @@ function descriptografar(texto){
    while(novoTexto.search('ufat') != -1){
       novoTexto = novoTexto.replace('ufat','u');
    }
-   return novoTexto;
+   mostrarNaTela(novoTexto);
 }
 
 function opcao(funcao,texto){
    switch(funcao){
-      case "criptografia":
+      case "criptografar":
          criptografar(texto);
          break;
       case "descriptografar":
-         descriptorografar(texto);
+         descriptografar(texto);
          break;
       default: 
          alert("Essa opção não existe. Por favor, tente novamente!");
@@ -76,5 +76,11 @@ function mostrarNaTela(texto){
 let criptografarBotao = document.querySelector("button#criptografar");
 criptografarBotao.addEventListener("click", function(){
    let texto = document.querySelector("#mensagem");
-   opcao("criptografia",texto.value);
+   opcao("criptografar",texto.value);
 });
+
+let descriptografarBotao = document.querySelector("button#descriptografar");
+descriptografarBotao.addEventListener("click",function(){
+   let texto = document.querySelector("#mensagem");
+   opcao("descriptografar",texto.value);
+})

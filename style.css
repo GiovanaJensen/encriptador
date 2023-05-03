@@ -28,10 +28,12 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 3rem;
-    padding: 0 24px 0 13.625rem ;
+    padding-left: 5rem ;
+    padding-right: 1rem;
 }
 
 main textarea{
+    resize:none;
     border: 1px solid #0A3871;
     border-radius: 2rem;
     width: 100%;
@@ -40,7 +42,7 @@ main textarea{
     font-size: 1.125rem;
 }
 
-main form p{
+main #form p{
     display: flex;
     align-items: center;
     margin-top: 1.25rem;
@@ -52,9 +54,8 @@ main form p{
 
 main div#buttons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
-    gap: 1.5rem;
 }
 
 main button{
@@ -62,6 +63,7 @@ main button{
     border-radius: 1.5rem;
     width: 20.5rem;
     padding: 1.5rem;
+    cursor: pointer;
 }
 
 main div#buttons button:first-child{
@@ -69,12 +71,22 @@ main div#buttons button:first-child{
     color: #fff;
 }
 
+main div#buttons button:first-child:hover{
+    background-color:#052051;
+    transition: all .45s ease;
+}
+
 main div#buttons button:last-child{
-    background-color: #D8DFE8;
+    background-color: #fff;
     color: #0A3871;
 }
 
-main section{
+main div#buttons button:last-child:hover{
+    background-color: #EFF1FA;
+    transition: all .45s ease;
+}
+
+main section#mensagens{
     background-color: #fff;
     border-radius: 2rem;
     box-shadow: 3px 3px 5px #ccc;
@@ -82,11 +94,16 @@ main section{
     text-align: center;
 }
 
-main section h2{
+main section#mensagens h2{
     color: #343A40;
 }
 
-main section p {
+main section#mensagens p {
     margin-top: 1rem;
     color: #495057;
+}
+
+footer{
+    text-align: center;
+    padding: 1rem;
 }

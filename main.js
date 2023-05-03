@@ -30,7 +30,7 @@ function criptografar(texto){
             break;
       }
    }
-   return novoTexto;
+   mostrarNaTela(novoTexto);
 }
 
 function descriptografar(texto){
@@ -53,6 +53,28 @@ function descriptografar(texto){
    return novoTexto;
 }
 
-let texto = "giovana";
-// document.write(criptografar(texto));
-// document.write("<br>" + descriptografar(criptografar(texto)));
+function opcao(funcao,texto){
+   switch(funcao){
+      case "criptografia":
+         criptografar(texto);
+         break;
+      case "descriptografar":
+         descriptorografar(texto);
+         break;
+      default: 
+         alert("Essa opção não existe. Por favor, tente novamente!");
+         break;
+   }
+}
+
+function mostrarNaTela(texto){
+   let sectionTag = document.querySelector("section#mensagens");
+   sectionTag.innerText = texto;
+   sectionTag.style = "text-align: left;"
+}
+
+let criptografarBotao = document.querySelector("button#criptografar");
+criptografarBotao.addEventListener("click", function(){
+   let texto = document.querySelector("#mensagem");
+   opcao("criptografia",texto.value);
+});

@@ -103,6 +103,10 @@ main section#mensagens p {
     color: #495057;
 }
 
+button#copiar{
+    display: none;
+}
+
 footer{
     text-align: center;
     padding: 1rem;

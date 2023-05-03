@@ -6,6 +6,7 @@ A letra "a" é convertida para "ai"
 A letra "o" é convertida para "ober"
 A letra "u" é convertida para "ufat"
 */
+
 function criptografar(texto){
    let novoTexto = "";
    for(let i=0; i<texto.length; i++) {
@@ -68,19 +69,37 @@ function opcao(funcao,texto){
 }
 
 function mostrarNaTela(texto){
-   let sectionTag = document.querySelector("section#mensagens");
-   sectionTag.innerText = texto;
-   sectionTag.style = "text-align: left;"
+   const copiarBotao = document.querySelector("button#copiar");
+   copiarBotao.style = "display: block;";
+
+   const sectionTag = document.querySelector("section#mensagens");
+   sectionTag.style = "display: flex; flex-direction: column; align-items: space-between;"
+
+   const sectionDivTag = document.querySelector("section#mensagens div");
+   sectionDivTag.innerText = texto;
+   sectionDivTag.style = "text-align: left;";
 }
 
-let criptografarBotao = document.querySelector("button#criptografar");
+const criptografarBotao = document.querySelector("button#criptografar");
 criptografarBotao.addEventListener("click", function(){
-   let texto = document.querySelector("#mensagem");
+   const texto = document.querySelector("#mensagem");
    opcao("criptografar",texto.value);
 });
 
-let descriptografarBotao = document.querySelector("button#descriptografar");
+const descriptografarBotao = document.querySelector("button#descriptografar");
 descriptografarBotao.addEventListener("click",function(){
-   let texto = document.querySelector("#mensagem");
+   const texto = document.querySelector("#mensagem");
    opcao("descriptografar",texto.value);
+});
+
+const copiarBotao = document.querySelector("button#copiar");
+copiarBotao.addEventListener("click",function(){
+   const sectionDivTag = document.querySelector("section#mensagens div");
+   navigator.clipboard.writeText(sectionDivTag.innerText)
+  .then(() => {
+    console.log('Copied to clipboard');
+   })
+  .catch((error) => {
+    console.error('Failed to copy: ', error);
+  });
 })

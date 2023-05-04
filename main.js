@@ -70,14 +70,11 @@ function opcao(funcao,texto){
 
 function mostrarNaTela(texto){
    const copiarBotao = document.querySelector("button#copiar");
-   copiarBotao.style = "display: block;";
-
-   const sectionTag = document.querySelector("section#mensagens");
-   sectionTag.style = "display: flex; flex-direction: column; align-items: space-between;"
+   copiarBotao.style = "display: block;align-self: flex-end;";
 
    const sectionDivTag = document.querySelector("section#mensagens div");
    sectionDivTag.innerText = texto;
-   sectionDivTag.style = "text-align: left;";
+   sectionDivTag.style = "text-align: left; flex-grow: 1;";
 }
 
 const criptografarBotao = document.querySelector("button#criptografar");

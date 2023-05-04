@@ -76,17 +76,20 @@ main div#buttons button:first-child:hover{
     transition: all .45s ease;
 }
 
-main div#buttons button:last-child{
+main div#buttons button:last-child, main section#mensagens #copiar{
     background-color: #fff;
     color: #0A3871;
 }
 
-main div#buttons button:last-child:hover{
+main div#buttons button:last-child:hover, main section#mensagens #copiar:hover{
     background-color: #EFF1FA;
     transition: all .45s ease;
 }
 
 main section#mensagens{
+    display: flex; 
+    flex-direction: column;
+    min-height: 80vh;
     background-color: #fff;
     border-radius: 2rem;
     box-shadow: 3px 3px 5px #ccc;
